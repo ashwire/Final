@@ -86,6 +86,7 @@ import com.example.wazitoecommerce.navigation.FIRST_URL
 import com.example.wazitoecommerce.navigation.SCREEN01_URL
 import com.example.wazitoecommerce.navigation.SCREEN02_URL
 import com.example.wazitoecommerce.navigation.SIGNUP_URL
+import com.example.wazitoecommerce.navigation.VIEW_WORKERS_URL
 import com.example.wazitoecommerce.ui.theme.Blue01
 import com.example.wazitoecommerce.ui.theme.Purple41
 import kotlinx.coroutines.delay
@@ -234,7 +235,9 @@ fun Screen01(navController:NavHostController) {
                                     Image(
                                         painter = painterResource(id = R.drawable.hmremodell),
                                         contentDescription = "bali",
-                                        modifier = Modifier.fillMaxSize(),
+                                        modifier = Modifier
+                                            .fillMaxSize()
+                                            .clickable { navController.navigate(VIEW_WORKERS_URL) },
                                         contentScale = ContentScale.Crop
                                     )
 
@@ -269,7 +272,9 @@ fun Screen01(navController:NavHostController) {
                                     Image(
                                         painter = painterResource(id = R.drawable.cleaners),
                                         contentDescription = "bali",
-                                        modifier = Modifier.fillMaxSize(),
+                                        modifier = Modifier
+                                            .fillMaxSize()
+                                            .clickable { navController.navigate(VIEW_WORKERS_URL) },
                                         contentScale = ContentScale.Crop
                                     )
 
@@ -305,7 +310,9 @@ fun Screen01(navController:NavHostController) {
                                     Image(
                                         painter = painterResource(id = R.drawable.electricians),
                                         contentDescription = "bali",
-                                        modifier = Modifier.fillMaxSize(),
+                                        modifier = Modifier
+                                            .fillMaxSize()
+                                            .clickable { navController.navigate(VIEW_WORKERS_URL) },
                                         contentScale = ContentScale.Crop
                                     )
 
@@ -341,7 +348,9 @@ fun Screen01(navController:NavHostController) {
                                     Image(
                                         painter = painterResource(id = R.drawable.pestcontroll),
                                         contentDescription = "bali",
-                                        modifier = Modifier.fillMaxSize(),
+                                        modifier = Modifier
+                                            .fillMaxSize()
+                                            .clickable { navController.navigate(VIEW_WORKERS_URL) },
                                         contentScale = ContentScale.Crop
                                     )
 
@@ -401,14 +410,7 @@ val bottomNavItems = listOf(
 
     ),
 
-    BottomNavItem(
-        title = "Bookings",
-        route="booking",
-        selectedIcon=Icons.Filled.Face,
-        unselectedIcon=Icons.Outlined.Face,
-        hasNews = true,
-        badges=1
-    ),
+
 
 
     )

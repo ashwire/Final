@@ -51,7 +51,7 @@ fun Splash(navController:NavHostController) {
     ){
         val coroutine = rememberCoroutineScope()
         coroutine.launch {
-            delay(2000)
+            delay(2500)
             navController.navigate(FIRST_URL)
         }
 

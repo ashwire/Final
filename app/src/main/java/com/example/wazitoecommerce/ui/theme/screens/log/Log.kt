@@ -10,6 +10,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -72,6 +73,7 @@ fun Log(navController:NavHostController){
         Spacer(modifier = Modifier.height(30.dp))
         OutlinedTextField(
             value = password,
+
             onValueChange = {password = it},
             label = { Text(text = "Enter password", color = Color.White)},
             keyboardOptions = KeyboardOptions(
