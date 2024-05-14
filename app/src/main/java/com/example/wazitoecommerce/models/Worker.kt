@@ -10,7 +10,7 @@ class Worker {
     var imageUrl = ""
     var id:String = ""
 
-    constructor(name: String, email: String, password: String,servicesOffered:String,pricing:String,availability:String, id: String) {
+    constructor(name: String, email: String, password: String,servicesOffered:String,pricing:String,availability:String, imageUrl: String, id: String) {
         this.name = name
         this.email = email
         this.password = password

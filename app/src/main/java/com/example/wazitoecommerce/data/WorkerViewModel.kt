@@ -40,7 +40,7 @@ class WorkerViewModel(var navController:NavHostController, var context: Context)
                 // Save data to db
                 storageRef.downloadUrl.addOnSuccessListener {
                     var imageUrl = it.toString()
-                    var worker = Worker(name,email,password,servicesOffered,pricing,availability,imageUrl)
+                    var worker = Worker(name,email,password,servicesOffered,pricing,availability,imageUrl,workerId)
                     var databaseRef = FirebaseDatabase.getInstance().getReference()
                         .child("Workers/$workerId")
                     databaseRef.setValue(worker).addOnCompleteListener {

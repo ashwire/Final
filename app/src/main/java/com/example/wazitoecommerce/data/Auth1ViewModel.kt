@@ -30,7 +30,7 @@ class Auth1ViewModel(var navController: NavHostController, var context: Context)
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
             var serviceproviderId = mAuth.currentUser!!.uid
             var serviceproviderProfile = ServiceProvider(name, email, password, serviceproviderId)
-            // Create a reference table called Users inside of the Firebase database
+            // Create a reference table called ServiceProviders inside of the Firebase database
             var serviceproviderRef = FirebaseDatabase.getInstance().getReference()
                 .child("Workers/$serviceproviderId")
             serviceproviderRef.setValue(serviceproviderProfile).addOnCompleteListener {

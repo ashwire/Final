@@ -64,7 +64,7 @@ fun ViewWorkers(navController:NavHostController) {
         var workerRepository = WorkerViewModel(navController, context)
 
 
-        val emptyWorkerState = remember { mutableStateOf(Worker("","","","","","","")) }
+        val emptyWorkerState = remember { mutableStateOf(Worker("","","","","","","","")) }
         var emptyWorkersListState = remember { mutableStateListOf<Worker>() }
 
         var workers = workerRepository.allWorkers(emptyWorkerState, emptyWorkersListState)
@@ -138,8 +138,7 @@ fun WorkerItem(name:String, email:String, password:String, servicesOffered:Strin
                         navController:NavHostController,
                         workerRepository:WorkerViewModel, workerImage:String) {
 
-    Column(modifier = Modifier
-        .fillMaxWidth(),
+    Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center) {
         Text(text = name)
@@ -150,11 +149,15 @@ fun WorkerItem(name:String, email:String, password:String, servicesOffered:Strin
         Text(text = availability)
         Box (modifier = Modifier
             .fillMaxWidth()
-            .height(300.dp)){
+            .height(300.dp),
+            contentAlignment = Alignment.Center ){
             Image(
                 painter = rememberAsyncImagePainter(workerImage),
                 contentDescription = null,
-                modifier = Modifier.size(250.dp)
+                modifier = Modifier
+                    .size(width = 200.dp, height = 320.dp)
+
+
             )
 
         }

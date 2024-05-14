@@ -34,6 +34,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -92,6 +93,7 @@ fun AddWorkers(navController:NavHostController){
         OutlinedTextField(
             value = workerPassword,
             onValueChange = { workerPassword = it },
+            visualTransformation = PasswordVisualTransformation(),
             label = { Text(text = "Enter Password *") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
         )
@@ -147,7 +149,7 @@ fun AddWorkers(navController:NavHostController){
 
 @Composable
 fun ImagePicker(modifier: Modifier = Modifier, context: Context,navController: NavHostController,
-                name:String, email:String, password:String,servicesOffered:String, pricing:String,availability:String) {
+                name:String, email:String, password:String,servicesOffered:String, pricing:String, availability:String) {
     var hasImage by remember { mutableStateOf(false) }
     var imageUri by remember { mutableStateOf<Uri?>(null) }
 
@@ -185,7 +187,13 @@ fun ImagePicker(modifier: Modifier = Modifier, context: Context,navController: N
             Button(onClick = {
                 //-----------WRITE THE UPLOAD LOGIC HERE---------------//
                 var workerRepository = WorkerViewModel(navController,context)
-                workerRepository.uploadWorker(name, email ,password,servicesOffered, pricing,availability,imageUri!!)
+                workerRepository.uploadWorker(name,
+                    email ,
+                    password,
+                    servicesOffered,
+                    pricing,
+                    availability,
+                    imageUri!!)
 
 
             },colors = ButtonDefaults.buttonColors(Purple41)) {
